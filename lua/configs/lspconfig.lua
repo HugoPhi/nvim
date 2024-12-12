@@ -61,6 +61,6 @@ lspconfig.pylsp.setup {
 require("lspconfig").clangd.setup {
   cmd = { "clangd", "--background-index", "--clang-tidy", "--log=verbose" },
   init_options = {
-    fallbackFlags = { "-std=c++20" },
+    -- fallbackFlags = { "-std=c++20" },
   },
 }
