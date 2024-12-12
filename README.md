@@ -1,129 +1,127 @@
 # nvcustom - Neovim Configuration Based on NvChad 🎨
 
-[中文文档](./README_zh.md)
+On dotfile: ![config](https://dotfyle.com/HugoPhi/nvim)
 
-`nvcustom` is a Neovim configuration customized based on the [nvchad](https://github.com/nvchad/starter) framework. It aims to provide a powerful and customizable editing experience. This configuration supports light and dark themes and comes with built-in LSP support, intelligent completion, file browsing, and other features, making it suitable for various development scenarios.
+[English doc](./readme.md)
 
-![default](./assets/light.gif)
+This is my Neovim configuration, primarily focused on aesthetics and power, so there may be some performance issues. Please bear with me.
 
 ## 🛠️ Installation Steps
 
-### 1. Clone and Install the Project
+### 1. Clone and Install the Project, and Choose the Theme Branch 🎨
 
-First, clone and install the `nvchad` configuration framework:
-
-```bash
-git clone https://github.com/nvchad/starter ~/.config/nvim
-```
-
-Then, navigate to the `~/.config/nvim/lua` directory, delete the existing configuration, and clone the `nvcustom` configuration:
-
-```bash
-cd ~/.config/nvim/lua
-rm -rf *
-git clone https://github.com/hugophi/nvcustom.git .
-```
-
-### 2. Choose a Theme Branch 🎨
-
-During installation, you can choose a different theme based on your preference. The project supports three theme branches: `main` (default theme), `light` (light theme), and `dark` (dark theme). You can choose and clone a branch using the following commands:
+During installation, you can choose different themes according to your preferences. The project supports three theme branches: `main` (default theme), `light` (light theme), and `dark` (dark theme). The dark theme is suitable for 23-inch displays, while the light theme is mainly for smaller laptop screens. You can choose and clone different branches using the following commands:
 
 - **Default Theme (main)**:
 
   ```bash
-  git clone -b main https://github.com/hugophi/nvcustom.git .
+  git clone -b main https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
+
+![default](./assets/default.gif)
 
 - **Light Theme (light)**:
 
   ```bash
-  git clone -b light https://github.com/hugophi/nvcustom.git .
+  git clone -b light https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
+
+![light](./assets/light.gif)
 
 - **Dark Theme (dark)**:
 
   ```bash
-  git clone -b dark https://github.com/hugophi/nvcustom.git .
+  git clone -b dark https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
 
-Once done, start Neovim to load the corresponding theme configuration.
+![dark](./assets/dark.gif)
+
+After cloning, launch Neovim to load the corresponding theme configuration. It may take a little longer the first time.
 
 ## 🔧 Core Features Configuration
 
 ### 1. `auto-mason.lua` 🚀
 
-Automatically manages the installation and updates of Mason plugins and language servers. The following language services are auto-loaded:
+Automatically manages the installation and updating of Mason plugins and language servers. Here are the language services that are automatically loaded:
 
-| LSP/Formatter Name           | Type            | Supported Languages/Formats     |
+| lsp/formatter Name           | Type            | Supported Languages/Formats     |
 | ---------------------------- | --------------- | ------------------------------- |
-| `lua-language-server`        | LSP             | Lua                             |
-| `stylua`                     | Formatter       | Lua                             |
-| `bash-language-server`       | LSP             | Bash                            |
-| `vtsls`                      | LSP             | TypeScript, JavaScript          |
-| `html-lsp`                   | LSP             | HTML                            |
-| `css-lsp`                    | LSP             | CSS                             |
-| `prettier`                   | Formatter       | HTML, CSS, JSON, YAML, Markdown |
-| `python-lsp-server`          | LSP & Formatter | Python                          |
-| `basedpyright`               | LSP             | Python                          |
-| `clangd`                     | LSP             | C/C++                           |
-| `awk-language-server`        | LSP             | AWK                             |
-| `dockerfile-language-server` | LSP             | Dockerfile                      |
-| `typst-lsp`                  | LSP             | Typst                           |
-| `gopls`                      | LSP             | Go                              |
-| `julia-lsp`                  | LSP             | Julia                           |
+| `lua-language-server`        | lsp             | lua                             |
+| `stylua`                     | formatter       | lua                             |
+| `bash-language-server`       | lsp             | bash                            |
+| `vtsls`                      | lsp             | typescript, javascript          |
+| `html-lsp`                   | lsp             | html                            |
+| `css-lsp`                    | lsp             | css                             |
+| `prettier`                   | formatter       | html, css, json, yaml, markdown |
+| `python-lsp-server`          | lsp & formatter | python                          |
+| `basedpyright`               | lsp             | python                          |
+| `clangd`                     | lsp             | c/c++                           |
+| `awk-language-server`        | lsp             | awk                             |
+| `dockerfile-language-server` | lsp             | dockerfile                      |
+| `typst-lsp`                  | lsp             | typst                           |
+| `gopls`                      | lsp             | go                              |
+| `julia-lsp`                  | lsp             | julia                           |
 
-### 2. `bannar.lua` 🎉
+### 2. `bannar.lua` 🎉 (Deprecated, Replaced by alpha.nvim)
 
-Configures a welcome banner displayed when Neovim starts, offering a clean and personalized welcome experience.
+Configures the welcome banner for Neovim startup, providing a simple and personalized welcome experience.
 
 ### 3. `conform.lua` ⚙️
 
-Through the `conform` configuration, `nvcustom` provides code formatting and style checking functionality, supporting various language formatting tools. It includes support for Lua, Rust, Python, C/C++, and other languages.
+With the `conform` configuration, nvcustom offers code formatting and style checking features, supporting formatting tools for multiple languages. This includes support for lua, rust, python, c/c++, and others.
 
 ### 4. `dashconfigs.lua` 🖥️
 
-Configures Neovim's plugin dashboard and interface settings, ensuring quick access and management of frequently used features. The plugins here use "alpha-nvim", with the header separated into its own file, and buttons and footer located in the plugin folder.
+Configures the Neovim plugin dashboard and interface settings, ensuring quick access to commonly used functions. The plugin used here is "alpha-nvim," where I have separated the header into this file, and the button and footer are in the plugin folder.
 
 ### 5. `lazy.lua` ⏳
 
-Implements a lazy loading mechanism to optimize Neovim's startup speed by loading plugins only as needed, improving overall performance.
+Implements lazy loading to optimize Neovim's startup speed by loading plugins on-demand, improving overall performance.
 
 ### 6. `lspconfig.lua` 💻
 
-Integrates LSP (Language Server Protocol) to provide intelligent completion, navigation, error suggestions, and support for multiple programming languages.
+Integrates LSP (Language Server Protocol) to provide intelligent completion, navigation, error highlighting, and other features. It supports multiple programming languages.
 
 ### 7. `nvtree.lua` 🌲
 
-Configures the Neovim file tree plugin `nvim-tree`, offering a clean and efficient file browsing experience. You can customize file icons to match your personal aesthetic preferences.
+Configures Neovim's file tree plugin `nvim-tree`, providing a clean and efficient file browsing experience. You can customize the file icons to match your aesthetic preferences.
+
+### 8. `alpha.nvim`
+
+Configures the welcome interface. The light and dark themes are different, and you can modify the configuration in `plugins/init.nvim`.
 
 ## ⚙️ Configuration Files
 
 ### 1. `chadrc.lua` 🎨
 
-This is the main configuration file for `nvchad`, responsible for theme and UI configurations. You can modify this file to customize Neovim's appearance and theme settings to fit your personal needs.
+This is the main configuration file for NvChad, responsible for theme and UI configurations. By modifying this file, you can customize the appearance and theme settings of Neovim to meet your personal needs.
 
 ### 2. `mappings.lua` ⌨️
 
-This file is used to set Neovim's key mappings. You can modify and add shortcut key mappings based on your preferences to enhance your editing efficiency.
+This file is used to set Neovim's key mappings. You can modify or add custom key bindings based on your preferences to improve editing efficiency.
 
 ### 3. `options.lua` ⚙️
 
-This file contains configuration for global options, such as editor behavior, UI settings, and performance optimizations. You can adjust these global options to suit your needs.
+This file contains global configuration options such as editor behavior, UI settings, and performance optimizations. You can adjust these global options as needed.
 
 ## 🚀 Usage
 
-1. Once `nvcustom` is installed and configured, simply start Neovim to begin using it.
-2. All core features are enabled by default and optimized based on best practices.
+1. After installing and configuring nvcustom, simply launch Neovim to start using it.
+2. All core features are enabled by default and optimized according to best practices.
 
 ## ✨ Customization
 
-- To customize features or modify settings, refer to the [NvChad documentation](https://nvchad.com/) and the relevant plugin documentation.
-- Each feature module is independently configurable, so you can adjust the configuration files in the `config` directory according to your needs.
+- To customize features or change settings, refer to the [NvChad documentation](https://nvchad.com/) and the documentation of the related plugins.
+- Each feature module is configured independently, so you can adjust the configuration files in the `config` directory according to your needs.
 
-## 🤝 Contributions
+## 🤝 Contributing
 
-Contributions of any form are welcome. If you have suggestions or issues, please submit them via GitHub issues or pull requests.
+Contributions are welcome in any form. If you have suggestions or issues, please submit them via GitHub issues or pull requests.
 
 ## 📜 License
 
 MIT License.
+
+---
+
+Let me know if you need further adjustments!

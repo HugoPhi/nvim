@@ -1,52 +1,41 @@
 # nvcustom - neovim configuration based on nvchad 🎨
 
+On dotfile: ![config](https://dotfyle.com/HugoPhi/nvim)
+
 [english doc](./readme.md)
 
-nvcustom 是一个基于 [nvchad](https://github.com/nvchad/starter) 配置框架定制的 neovim 配置，旨在提供一个功能强大且易于定制的编辑体验。这个配置项目支持亮色和暗色主题，并内置了 lsp 支持、智能补全、文件浏览等功能，适用于各种开发场景。
-
-![default](./assets/light.gif)
+这是我的neovim配置，以美观和强大为主要目标，因此可能会有一些性能上的问题大家见谅。
 
 ## 🛠️ 安装步骤
 
-### 1. 克隆并安装项目
+### 1. 克隆并安装项目并选择主题分支 🎨
 
-首先，克隆并安装 nvchad 配置框架：
-
-```bash
-git clone https://github.com/nvchad/starter ~/.config/nvim
-```
-
-然后进入到 `~/.config/nvim/lua` 目录，删除现有配置并克隆 `nvcustom` 配置：
-
-```bash
-cd ~/.config/nvim/lua
-rm -rf *
-git clone https://github.com/hugophi/nvcustom.git .
-```
-
-### 2. 选择主题分支 🎨
-
-在安装时，你可以根据自己的喜好选择不同的主题。项目支持三个主题分支：`main`（默认主题）、`light`（亮色主题）、`dark`（暗色主题）。可以通过以下命令选择并克隆不同的分支：
+在安装时，你可以根据自己的喜好选择不同的主题。项目支持三个主题分支：`main`（默认主题）、`light`（亮色主题）、`dark`（暗色主题）。其中暗色主题适用于23寸显示屏而亮色主题主要适用于屏幕较小的笔记本电脑等。可以通过以下命令选择并克隆不同的分支：
 
 - **默认主题 (main)**：
 
   ```bash
-  git clone -b main https://github.com/hugophi/nvcustom.git .
+  git clone -b main https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
+
+![default](./assets/default.gif)
 
 - **亮色主题 (light)**：
-
   ```bash
-  git clone -b light https://github.com/hugophi/nvcustom.git .
+  git clone -b light https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
+
+![light](./assets/light.gif)
 
 - **暗色主题 (dark)**：
 
   ```bash
-  git clone -b dark https://github.com/hugophi/nvcustom.git .
+  git clone -b dark https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
 
-完成后，启动 neovim 即可加载对应主题的配置。
+![dark](./assets/dark.gif)
+
+完成后，启动 neovim 即可加载对应主题的配置，时间可能会稍微长一些。
 
 ## 🔧 核心功能配置
 
@@ -72,7 +61,7 @@ git clone https://github.com/hugophi/nvcustom.git .
 | `gopls`                      | lsp             | go                              |
 | `julia-lsp`                  | lsp             | julia                           |
 
-### 2. `bannar.lua` 🎉
+### 2. `bannar.lua` 🎉 (弃用，被alpha.nvim取代)
 
 配置 neovim 启动时的欢迎横幅，提供一个简洁而富有个性的欢迎体验。
 
@@ -95,6 +84,10 @@ git clone https://github.com/hugophi/nvcustom.git .
 ### 7. `nvtree.lua` 🌲
 
 配置了 neovim 的文件树插件 `nvim-tree`，提供简洁高效的文件浏览体验。你可以根据文件修改图标以符合你自己的审美风格。
+
+### 8. `alpha.nvim`
+
+关于欢迎界面的配置。亮色和暗色主题不一样，可以在plugins/init.nvim里面修改配置。
 
 ## ⚙️ 配置文件介绍
 
