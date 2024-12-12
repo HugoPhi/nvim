@@ -13,7 +13,7 @@ local M = {
     -- "r_language_server",         -- R LSP
     "awk-language-server", -- awk LSP
     "dockerfile-language-server", -- dockerfile LSP
-    "tinymist", -- typst LSP
+    "typst-lsp", -- typst LSP
     "gopls", -- go LSP
     "julia-lsp", -- julia LSP
   },

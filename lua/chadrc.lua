@@ -3,13 +3,13 @@ local bannar = require "../configs/bannar"
 local options = {
 
   base46 = {
-    theme = "bearded-arc",
+    theme = "flexoki-light",
     hl_add = {},
     hl_override = {},
     integrations = {},
     changed_themes = {},
     transparency = true,
-    theme_toggle = { "bearded-arc", "bearded-arc" },
+    theme_toggle = { "flexoki-light", "flexoki-light" },
   },
 
   ui = {
@@ -39,7 +39,6 @@ local options = {
     tabufline = {
       enabled = true,
       lazyload = false,
-      -- order = { "treeOffset", "buffers", "tabs", "btns" },
       order = { "treeOffset", "buffers" },
       modules = nil,
     },
@@ -53,9 +52,9 @@ local options = {
     buttons = {
       { txt = "  Find File", keys = "Spc f f", cmd = "Telescope find_files" },
       { txt = "  Recent Files", keys = "Spc f o", cmd = "Telescope oldfiles" },
-      { txt = "󰈭  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
-      { txt = "󱥚  Themes", keys = "Spc t h", cmd = ":lua require('nvchad.themes').open()" },
-      { txt = "  Mappings", keys = "Spc c h", cmd = "NvCheatsheet" },
+      -- { txt = "󰈭  Find Word", keys = "Spc f w", cmd = "Telescope live_grep" },
+      -- { txt = "󱥚  Themes", keys = "Spc t h", cmd = ":lua require('nvchad.themes').open()" },
+      -- { txt = "  Mappings", keys = "Spc c h", cmd = "NvCheatsheet" },
 
       { txt = "─", hl = "NvDashLazy", no_gap = true, rep = true },
 

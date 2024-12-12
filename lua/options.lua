@@ -7,7 +7,16 @@ vim.o.autochdir = true
 vim.o.cursorline = false
 vim.o.wrap = false
 vim.o.whichwrap = "b,s,<,>,[,]"
+vim.o.sidescroll = 1
+vim.o.sidescrolloff = 30
 vim.g.indent_blankline_show_first_indent_level = true
+
+-- 设置 TabLine 背景为透明
+vim.cmd [[
+  highlight TabLine guibg=NONE
+  highlight TabLineFill guibg=NONE
+  highlight TabLineSel guibg=NONE
+]]
 
 local autocmd = vim.api.nvim_create_autocmd
 
@@ -58,18 +67,19 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   end,
 })
 
--- notification
-vim.api.nvim_set_hl(0, "NotifyBackground", { bg = "#000000" })
-
--- tabufline
-vim.api.nvim_set_hl(0, "TabLine", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" })
-vim.api.nvim_set_hl(0, "TabLineSel", { bg = "NONE" })
+vim.api.nvim_create_autocmd("BufEnter", {
+  callback = function()
+    require("virt-column").setup {
+      char = ".",
+      virtcolumn = "100",
+    }
+  end,
+})
 
 -- Code Window
 vim.api.nvim_set_hl(0, "CodewindowUnderline", {
   bg = "None",
-  fg = "#FFFFFF",
+  fg = "#000000",
   -- undercurl = true,  -- Underline style: curve
   underline = true,
 })
