@@ -4,7 +4,7 @@ https://github.com/user-attachments/assets/4c39ea0c-1c9d-497e-984c-121559a44c91
 
 [中文版](./README_zh.md)
 
-This is my Neovim configuration on ![dotfile](https://dotfyle.com/HugoPhi/nvim), primarily focused on aesthetics and power, so there may be some performance issues. Please bear with me.
+This is my Neovim configuration on [dotfile](https://dotfyle.com/HugoPhi/nvim), primarily focused on aesthetics and power, so there may be some performance issues. Please bear with me.
 
 ## 🛠️ Installation Steps
 
