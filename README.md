@@ -116,6 +116,11 @@ This file contains global configuration options such as editor behavior, UI sett
 
 Contributions are welcome in any form. If you have suggestions or issues, please submit them via GitHub issues or pull requests.
 
+<div align="center">
+  <img src="https://repobeats.axiom.co/api/embed/f4f4dff17362415bc150b2402eccdab6bf0b7319.svg" alt="Repobeats analytics image" title="Repobeats analytics image">
+</div>
+
+
 ## 📜 License
 
 MIT License.
