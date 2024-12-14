@@ -120,6 +120,3 @@ Contributions are welcome in any form. If you have suggestions or issues, please
 
 MIT License.
 
----
-
-Let me know if you need further adjustments!
