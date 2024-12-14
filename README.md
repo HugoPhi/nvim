@@ -1,10 +1,8 @@
 # nvcustom - Neovim Configuration Based on NvChad 🎨
 
-On dotfile: ![config](https://dotfyle.com/HugoPhi/nvim)
+[中文版](./README_zh.md)
 
-[English doc](./readme.md)
-
-This is my Neovim configuration, primarily focused on aesthetics and power, so there may be some performance issues. Please bear with me.
+This is my Neovim configuration on ![dotfile](https://dotfyle.com/HugoPhi/nvim), primarily focused on aesthetics and power, so there may be some performance issues. Please bear with me.
 
 ## 🛠️ Installation Steps
 
@@ -17,8 +15,6 @@ During installation, you can choose different themes according to your preferenc
   ```bash
   git clone -b main https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
-
-![default](./assets/default.gif)
 
 - **Light Theme (light)**:
 
@@ -34,7 +30,7 @@ During installation, you can choose different themes according to your preferenc
   git clone -b dark https://github.com/hugophi/nvcustom.git ~/.config/nvim
   ```
 
-![dark](./assets/dark.gif)
+https://github.com/user-attachments/assets/4c39ea0c-1c9d-497e-984c-121559a44c91
 
 After cloning, launch Neovim to load the corresponding theme configuration. It may take a little longer the first time.
 
