@@ -1,5 +1,6 @@
 require "nvchad.options"
 
+vim.o.laststatus = 0
 vim.o.scrolloff = 5
 vim.o.relativenumber = true
 vim.o.number = true
