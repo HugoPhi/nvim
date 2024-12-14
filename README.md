@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/4c39ea0c-1c9d-497e-984c-121559a44c91
+
 # nvcustom - Neovim Configuration Based on NvChad 🎨
 
 [中文版](./README_zh.md)
