@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a problem in Screenkey.nvim
+description: "Report a problem in Yunming Hu's neovim config"
 labels: [bug]
 body:
 
