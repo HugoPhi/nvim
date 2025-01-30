@@ -15,13 +15,13 @@ During installation, you can choose different themes according to your preferenc
 - **Default Theme (main)**:
 
   ```bash
-  git clone -b main https://github.com/hugophi/nvcustom.git ~/.config/nvim
+  git clone -b main https://github.com/hugophi/nvim.git ~/.config/nvim
   ```
 
 - **Light Theme (light)**:
 
   ```bash
-  git clone -b light https://github.com/hugophi/nvcustom.git ~/.config/nvim
+  git clone -b light https://github.com/hugophi/nvim.git ~/.config/nvim
   ```
 
 ![light](./assets/light.gif)
@@ -29,7 +29,7 @@ During installation, you can choose different themes according to your preferenc
 - **Dark Theme (dark)**:
 
   ```bash
-  git clone -b dark https://github.com/hugophi/nvcustom.git ~/.config/nvim
+  git clone -b dark https://github.com/hugophi/nvim.git ~/.config/nvim
   ```
 
 https://github.com/user-attachments/assets/4c39ea0c-1c9d-497e-984c-121559a44c91
