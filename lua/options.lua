@@ -1,5 +1,6 @@
 require "nvchad.options"
 
+vim.o.cmdheight = 0
 vim.o.scrolloff = 5
 vim.o.relativenumber = true
 vim.o.number = true
@@ -67,14 +68,14 @@ vim.api.nvim_create_autocmd({ "BufEnter" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
-  callback = function()
-    require("virt-column").setup {
-      char = ".",
-      virtcolumn = "100",
-    }
-  end,
-})
+-- vim.api.nvim_create_autocmd("BufEnter", {
+--   callback = function()
+--     require("virt-column").setup {
+--       char = ".",
+--       virtcolumn = "100",
+--     }
+--   end,
+-- })
 
 -- Code Window
 vim.api.nvim_set_hl(0, "CodewindowUnderline", {

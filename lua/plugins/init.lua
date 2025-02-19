@@ -1,5 +1,22 @@
 return {
   {
+    "codota/tabnine-nvim",
+    lazy = false,
+    build = "./dl_binaries.sh",
+    config = function()
+      require("tabnine").setup {
+        disable_auto_comment = true,
+        accept_keymap = "<C-]>",
+        dismiss_keymap = "<Esc>",
+        debounce_ms = 800,
+        suggestion_color = { gui = "#808080", cterm = 244 },
+        exclude_filetypes = { "TelescopePrompt", "NvimTree" },
+        log_file_path = nil, -- 如果需要可以设置 log 文件路径
+        ignore_certificate_errors = false,
+      }
+    end,
+  },
+  {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     lazy = false,
     dependencies = { "williamboman/mason.nvim" },
@@ -10,15 +27,31 @@ return {
   {
     "MeanderingProgrammer/render-markdown.nvim",
     lazy = false,
-    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
-    -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.icons' }, -- if you use standalone mini plugins
+    -- dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.nvim" }, -- if you use the mini.nvim suite
+    dependencies = { "nvim-treesitter/nvim-treesitter", "echasnovski/mini.icons" }, -- if you use standalone mini plugins
     -- dependencies = { 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' }, -- if you prefer nvim-web-devicons
     ---@module 'render-markdown'
     opts = {},
   },
+  {
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+    config = function()
+      vim.g.mkdp_browser = "firefox"
+      vim.g.mkdp_theme = "light"
+      vim.g.mkdp_auto_close = 1
+      -- vim.g.mkdp_markdown_css = '/home/tibless/.config/Typora/themes/hugo.css'
+    end,
+  },
+
   { -- Code Window
     "gorbit99/codewindow.nvim",
     lazy = false,
+    enabled = false,
     config = function()
       local codewindow = require "codewindow"
       codewindow.setup {
@@ -29,13 +62,6 @@ return {
         window_border = "none", -- none, single, double
       }
       codewindow.apply_default_keybinds()
-    end,
-  },
-  {
-    "lukas-reineke/virt-column.nvim",
-    lazy = false,
-    config = function()
-      require("virt-column").setup {}
     end,
   },
   {
@@ -51,26 +77,18 @@ return {
       require "configs.lspconfig"
     end,
   },
-  {
-    "Exafunction/codeium.vim",
-    lazy = false,
-    config = function()
-      vim.g.codeium_enabled = true
-    end,
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    show_guides = true,
-    lazy = false,
-    config = function()
-      require("symbols-outline").setup {
-        position = "left",
-        width = 40,
-        auto_close = true,
-      }
-    end,
-  },
-
+  -- {
+  --   "simrat39/symbols-outline.nvim",
+  --   show_guides = true,
+  --   lazy = false,
+  --   config = function()
+  --     require("symbols-outline").setup {
+  --       position = "right",
+  --       width = 20,
+  --       auto_close = false,
+  --     }
+  --   end,
+  -- },
   {
     "lukas-reineke/indent-blankline.nvim",
 

@@ -7,6 +7,8 @@ local options = {
     rust = { "rustfmt" },
     c = { "clang_format_4" },
     cpp = { "clang_format_4" },
+    tex = { "latexindent" },
+    bib = { "bibtex-tidy" }
   },
 
   -- format_on_save = {

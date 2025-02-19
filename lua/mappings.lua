@@ -24,6 +24,9 @@ map("n", "<s-tab>", ":bprevious<CR>")
 map("n", "<leader>fo", ":Telescope oldfiles<CR>", { noremap = true, silent = true })
 map("n", "<leader>sy", ":SymbolsOutline<CR>")
 map("n", "<space><space>", "bve")
+map("n", "<leader>fd", ":Telescope lsp_document_symbols<CR>")
+map("n", "<leader>ff", ":Telescope live_grep<CR>")
+map("n", "<leader>fw", ":Telescope diagnostics<CR>")
 
 -- Visual mode keymaps
 map("v", "q", "<ESC>")
@@ -50,9 +53,9 @@ map("v", "<space>", "e")
 -- map("t", "C-h", "<C-\\><C-N><C-w>h")
 
 -- Codeium
-map("i", "<C-]>", function()
-  return vim.fn["codeium#Accept"]()
-end, { expr = true, silent = true })
+-- map("i", "<C-]>", function()
+--   return vim.fn["codeium#Accept"]()
+-- end, { expr = true, silent = true })
 -- map('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true, silent = true })
 -- map('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true, silent = true })
 -- map('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
