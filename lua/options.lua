@@ -89,5 +89,5 @@ vim.api.nvim_set_hl(0, "CodewindowUnderline", {
 if vim.g.neovide then
   vim.o.guifont = "Hasklug Nerd Font:h13.5" -- text below applies for VimScript
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
-  vim.g.neovide_transparency = 0.7
+  vim.g.neovide_transparency = 1.0
 end
