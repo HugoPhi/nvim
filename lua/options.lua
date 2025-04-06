@@ -2,6 +2,7 @@ require "nvchad.options"
 
 vim.o.cmdheight = 0
 vim.o.scrolloff = 5
+vim.o.winblend = 60
 vim.o.relativenumber = true
 vim.o.number = true
 vim.o.autochdir = true
@@ -19,6 +20,8 @@ vim.cmd [[
   highlight TabLineSel guibg=NONE
 ]]
 
+
+-- open last time
 local autocmd = vim.api.nvim_create_autocmd
 
 autocmd("BufReadPost", {
@@ -85,9 +88,34 @@ vim.api.nvim_set_hl(0, "CodewindowUnderline", {
   underline = true,
 })
 
+
+-- cippboard
+vim.g.clipboard = {
+  name = 'WslClipboard',
+  copy = {
+    ['+'] = 'clip.exe',
+    ['*'] = 'clip.exe',
+  },
+  paste = {
+    ['+'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    ['*'] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+  },
+  cache_enabled = 0,
+}
+
+-- Show Nvdash when all buffers are closed
+vim.api.nvim_create_autocmd("BufDelete", {
+  callback = function()
+    local bufs = vim.t.bufs
+    if #bufs == 1 and vim.api.nvim_buf_get_name(bufs[1]) == "" then
+      vim.cmd "Nvdash"
+    end
+  end,
+})
+
 -- neovide
 if vim.g.neovide then
-  vim.o.guifont = "Hasklug Nerd Font:h13.5" -- text below applies for VimScript
+  vim.o.guifont = "AnonymicePro Nerd Font:h12" -- text below applies for VimScript
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
-  vim.g.neovide_transparency = 1.0
+  vim.g.neovide_opacity = 1.0
 end

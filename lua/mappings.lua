@@ -27,6 +27,8 @@ map("n", "<space><space>", "bve")
 map("n", "<leader>fd", ":Telescope lsp_document_symbols<CR>")
 map("n", "<leader>ff", ":Telescope live_grep<CR>")
 map("n", "<leader>fw", ":Telescope diagnostics<CR>")
+map("n", "<leader>v", ":FloatermNew powershell<CR>", { noremap = true, silent = true })
+map("n", "<leader>vv", ":FloatermNew cmd<CR>", { noremap = true, silent = true })
 
 -- Visual mode keymaps
 map("v", "q", "<ESC>")
@@ -45,12 +47,6 @@ map("v", ">", ">gv")
 map("v", "H", "^")
 map("v", "L", "$h")
 map("v", "<space>", "e")
-
--- terminal
--- map("t", "C-j", "<C-\\><C-N><C-w>j")
--- map("t", "C-k", "<C-\\><C-N><C-w>k")
--- map("t", "C-l", "<C-\\><C-N><C-w>l")
--- map("t", "C-h", "<C-\\><C-N><C-w>h")
 
 -- Codeium
 -- map("i", "<C-]>", function()

@@ -1,21 +1,23 @@
 return {
   {
-    "codota/tabnine-nvim",
+    "voldikss/vim-floaterm", -- nvim-floaterm 插件地址
     lazy = false,
-    build = "./dl_binaries.sh",
     config = function()
-      require("tabnine").setup {
-        disable_auto_comment = true,
-        accept_keymap = "<C-]>",
-        dismiss_keymap = "<Esc>",
-        debounce_ms = 800,
-        suggestion_color = { gui = "#808080", cterm = 244 },
-        exclude_filetypes = { "TelescopePrompt", "NvimTree" },
-        log_file_path = nil, -- 如果需要可以设置 log 文件路径
-        ignore_certificate_errors = false,
-      }
+      vim.g.floaterm_borderchars = { "", "", "", "", "", "", "", "" }
+      vim.g.floaterm_width = 0.8 -- 设置浮窗宽度为 80%
+      vim.g.floaterm_height = 0.8 -- 设置浮窗高度为 80%
+      vim.g.floaterm_position = "center" -- 设置浮窗位置为中心
     end,
   },
+
+  {
+    "Exafunction/codeium.vim",
+    lazy = false,
+    config = function()
+      vim.g.codeium_enabled = true
+    end,
+  },
+
   {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     lazy = false,
@@ -24,6 +26,7 @@ return {
       require("mason-tool-installer").setup(require "../configs/auto-mason")
     end,
   },
+
   {
     "MeanderingProgrammer/render-markdown.nvim",
     lazy = false,
@@ -33,6 +36,7 @@ return {
     ---@module 'render-markdown'
     opts = {},
   },
+
   {
     "iamcco/markdown-preview.nvim",
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
@@ -51,11 +55,11 @@ return {
   { -- Code Window
     "gorbit99/codewindow.nvim",
     lazy = false,
-    enabled = false,
+    enabled = true,
     config = function()
       local codewindow = require "codewindow"
       codewindow.setup {
-        auto_enable = true,
+        auto_enable = false,
         show_cursor = false,
         side = "right",
         screen_bounds = "lines", -- lines, background
@@ -64,6 +68,7 @@ return {
       codewindow.apply_default_keybinds()
     end,
   },
+
   {
     "stevearc/conform.nvim",
     -- event = 'BufWritePre', -- uncomment for format on save
@@ -77,18 +82,20 @@ return {
       require "configs.lspconfig"
     end,
   },
-  -- {
-  --   "simrat39/symbols-outline.nvim",
-  --   show_guides = true,
-  --   lazy = false,
-  --   config = function()
-  --     require("symbols-outline").setup {
-  --       position = "right",
-  --       width = 20,
-  --       auto_close = false,
-  --     }
-  --   end,
-  -- },
+
+  {
+    "simrat39/symbols-outline.nvim",
+    show_guides = true,
+    lazy = false,
+    config = function()
+      require("symbols-outline").setup {
+        position = "right",
+        width = 45,
+        auto_close = false,
+      }
+    end,
+  },
+
   {
     "lukas-reineke/indent-blankline.nvim",
 
@@ -124,6 +131,7 @@ return {
       require("nvim-tree").setup(require "../configs/nvtree")
     end,
   },
+
   {
     "goolord/alpha-nvim",
     lazy = false,
@@ -158,6 +166,31 @@ return {
 
       -- Header
       require("alpha").setup(applyColors(config.logo, config.colors, config.logoColors))
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" }, -- telescope 依赖 plenary.nvim
+    config = function()
+      require("telescope").setup {
+        defaults = {
+          -- 搜索结果逆序显示
+          sorting_strategy = "ascending",
+
+          -- 布局配置
+          layout_config = {
+            width = 0.9, -- 总宽度为 90%
+            height = 0.9, -- 总高度为 90%
+            prompt_position = "top", -- 提示符位置在顶部
+            preview_width = 0.6, -- 预览框宽度为 60%
+            preview_cutoff = 30, -- 最小预览宽度为 40 列
+          },
+
+          -- 禁用边框（可选）
+          borderchars = { "", "", "", "", "", "", "", "" },
+        },
+      }
     end,
   },
 }
