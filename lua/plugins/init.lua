@@ -189,6 +189,12 @@ return {
 
           -- 禁用边框（可选）
           borderchars = { "", "", "", "", "", "", "", "" },
+
+          mappings = {
+            n = {
+              ["q"] = require("telescope.actions").close,
+            },
+          },
         },
       }
     end,

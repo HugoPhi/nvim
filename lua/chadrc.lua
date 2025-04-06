@@ -81,7 +81,7 @@ local options = {
       col = 0.25,
       width = 0.5,
       height = 0.4,
-      border = "single",
+      border = "None",
     },
   },
 
