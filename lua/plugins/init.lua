@@ -3,9 +3,9 @@ return {
     "voldikss/vim-floaterm", -- nvim-floaterm 插件地址
     lazy = false,
     config = function()
-      vim.g.floaterm_borderchars = { "", "", "", "", "", "", "", "" }
-      vim.g.floaterm_width = 0.8 -- 设置浮窗宽度为 80%
-      vim.g.floaterm_height = 0.8 -- 设置浮窗高度为 80%
+      -- vim.g.floaterm_borderchars = { "", "", "", "", "", "", "", "" }
+      vim.g.floaterm_width = 0.8
+      vim.g.floaterm_height = 0.8
       vim.g.floaterm_position = "center" -- 设置浮窗位置为中心
     end,
   },
@@ -169,6 +169,8 @@ return {
     end,
   },
 
+  -- Overload
+
   {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" }, -- telescope 依赖 plenary.nvim
@@ -183,8 +185,8 @@ return {
             width = 0.9, -- 总宽度为 90%
             height = 0.9, -- 总高度为 90%
             prompt_position = "top", -- 提示符位置在顶部
-            preview_width = 0.6, -- 预览框宽度为 60%
-            preview_cutoff = 30, -- 最小预览宽度为 40 列
+            preview_width = 0.5, -- 预览框宽度为 60%
+            -- preview_cutoff = 30, -- 最小预览宽度为 40 列
           },
 
           -- 禁用边框（可选）

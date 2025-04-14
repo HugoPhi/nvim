@@ -3,13 +3,13 @@ local bannar = require "../configs/bannar"
 local options = {
 
   base46 = {
-    theme = "flexoki-light",
+    theme = "kanagawa",
     hl_add = {},
     hl_override = {},
     integrations = {},
     changed_themes = {},
     transparency = true,
-    theme_toggle = { "flexoki-light", "flexoki-light" },
+    theme_toggle = { "kanagawa", "kanagawa" },
   },
 
   ui = {
@@ -21,6 +21,7 @@ local options = {
         tailwind = false, -- will work for css lsp too
         icon = "󱓻",
       },
+      border='none'
     },
 
     telescope = { style = "borderless" }, -- borderless / bordered

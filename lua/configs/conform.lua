@@ -20,7 +20,7 @@ local options = {
   formatters = {
     clang_format_4 = {
       command = "clang-format",
-      args = { "--style={BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, UseTab: Never}" },
+      args = { "--style={BasedOnStyle: Google, IndentWidth: 4, TabWidth: 4, UseTab: Never, BreakStringLiterals: false, ColumnLimit: 0}" },
     },
   },
 }
