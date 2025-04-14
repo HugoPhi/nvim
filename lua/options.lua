@@ -127,8 +127,8 @@ vim.api.nvim_create_autocmd("BufDelete", {
 
 -- neovide
 if vim.g.neovide then
-  vim.o.winblend = 50
+  -- vim.o.winblend = 50
   vim.o.guifont = "AnonymicePro Nerd Font:h12" -- text below applies for VimScript
   vim.g.neovide_cursor_vfx_mode = "pixiedust"
-  vim.g.neovide_opacity = 0.9
+  -- vim.g.neovide_opacity = 0.9
 end
