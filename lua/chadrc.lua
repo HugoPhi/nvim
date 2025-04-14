@@ -3,13 +3,13 @@ local bannar = require "../configs/bannar"
 local options = {
 
   base46 = {
-    theme = "kanagawa",
+    theme = "ayu_light",
     hl_add = {},
     hl_override = {},
     integrations = {},
     changed_themes = {},
     transparency = true,
-    theme_toggle = { "kanagawa", "kanagawa" },
+    theme_toggle = { "ayu_light", "ayu_light" },
   },
 
   ui = {
